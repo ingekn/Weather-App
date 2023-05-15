@@ -28,6 +28,24 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <h1>Weather App</h1>
+      <div class="weather-app">
+        <!-- search bar/form -->
+        <form id="search-form">
+          <input
+            class="search-bar"
+            type="search"
+            id="city-input"
+            placeholder="Look for another city..."
+          />
+          <input type="submit" value="Search" class="btn btn-warning" />
+          <button type="button" id="current-button" class="btn btn-info">
+            Current
+          </button>
+        </form>
+        <hr />
+      </div>
+    </div>
   </body>
 </html>
