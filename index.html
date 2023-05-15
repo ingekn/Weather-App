@@ -45,6 +45,38 @@
           </button>
         </form>
         <hr />
+        <!-- two columns with city and info and weather  -->
+
+        <div class="row">
+          <div class="col-6">
+            <h2 class="city"></h2>
+
+            <h3 class="day-plus-time" id="day-plus-time">Monday, 22:45</h3>
+
+            <div class="other-info">
+              <div>Precip: 1%</div>
+              <div>Humidity: <span id="humidity"></span>%</div>
+              <div>Wind: <span id="wind"></span> km/h</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="weather-image">
+              <img src="images/sunny.png" alt="sunny" width="88px" />
+            </div>
+
+            <div class="temp"></div>
+            <span class="degree-change">
+              <a href="#" id="celsius">°C</a>
+              |
+              <a href="#" id="fahrenheit">°F</a>
+            </span>
+
+            <span class="weather-condition" id="weather-description"
+              >Sunny</span
+            >
+          </div>
+        </div>
       </div>
     </div>
   </body>
