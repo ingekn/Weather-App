@@ -1,0 +1,116 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  text-align: center;
+  padding: 60px;
+  padding-bottom: 80px;
+  color: #ffc107;
+}
+
+.weather-app {
+  border: 2px solid #ffc107;
+  border-radius: 10px;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 750px;
+  height: 376px;
+  max-width: 650px;
+}
+.city {
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.day-plus-time {
+  font-size: 20px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  font-style: italic;
+  font-weight: 500;
+}
+.other-info {
+  font-size: 13px;
+  padding-bottom: 30px;
+  font-weight: 400;
+  padding-left: 20px;
+  font-style: italic;
+  font-weight: 500;
+}
+.search-bar {
+  margin-top: 50px;
+  font-size: 14px;
+  width: 230px;
+  height: 40px;
+  border-radius: 17px;
+  border: 2px solid #ffc107;
+}
+
+#city-input {
+  color: gray;
+  font-style: italic;
+  outline-offset: 0;
+  outline-color: #ffc107;
+  padding-left: 12px;
+  font-size: 14px;
+}
+
+.btn-warning {
+  position: relative;
+  left: 235px;
+  top: -40px;
+}
+.btn-info {
+  position: relative;
+  left: 12px;
+  top: 23px;
+}
+.weather-image {
+  position: relative;
+  left: -70px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+.temp,
+.weather-condition {
+  font-size: 25px;
+  position: relative;
+  left: -60px;
+  font-weight: 600;
+}
+.weather-condition {
+  position: relative;
+  top: -20px;
+  margin-top: 0px;
+  padding: 0;
+  text-transform: capitalize;
+}
+.degree-change {
+  font-size: 15px;
+  position: relative;
+  top: -40px;
+  left: -25px;
+  font-weight: 500;
+}
+.days {
+  padding: 0;
+  margin-left: 0;
+}
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday {
+  font-size: 14px;
+  position: relative;
+  left: -30px;
+  padding: 20px 0;
+  font-weight: 400;
+  text-align: center;
+}
