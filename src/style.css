@@ -19,6 +19,34 @@ h1 {
   height: 376px;
   max-width: 650px;
 }
+.upper-part {
+  margin: 10px 20px;
+}
+.search-bar {
+  font-size: 16px;
+  width: 330px;
+  height: 40px;
+  border-radius: 17px;
+  border: 2px solid #ffc107;
+}
+
+#city-input {
+  color: gray;
+  font-style: italic;
+  outline-offset: 0;
+  outline-color: #ffc107;
+  padding-left: 12px;
+  font-size: 14px;
+}
+
+.btn-warning {
+  position: relative;
+  left: 10px;
+}
+.btn-info {
+  position: relative;
+  left: 25px;
+}
 .city {
   font-size: 40px;
   margin-top: 20px;
@@ -43,34 +71,7 @@ h1 {
   font-style: italic;
   font-weight: 500;
 }
-.search-bar {
-  margin-top: 50px;
-  font-size: 14px;
-  width: 230px;
-  height: 40px;
-  border-radius: 17px;
-  border: 2px solid #ffc107;
-}
 
-#city-input {
-  color: gray;
-  font-style: italic;
-  outline-offset: 0;
-  outline-color: #ffc107;
-  padding-left: 12px;
-  font-size: 14px;
-}
-
-.btn-warning {
-  position: relative;
-  left: 235px;
-  top: -40px;
-}
-.btn-info {
-  position: relative;
-  left: 12px;
-  top: 23px;
-}
 .weather-image {
   position: relative;
   left: -70px;
