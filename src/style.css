@@ -45,12 +45,12 @@ h1 {
 }
 .btn-info {
   position: relative;
-  left: 25px;
+  left: 15px;
 }
 .city {
-  font-size: 40px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  font-size: 38px;
+  margin-top: 10px;
+  margin-bottom: 25px;
   padding-left: 20px;
   white-space: nowrap;
   overflow: hidden;
@@ -58,7 +58,7 @@ h1 {
 }
 .day-plus-time {
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   padding-left: 20px;
   font-style: italic;
   font-weight: 500;
