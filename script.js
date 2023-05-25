@@ -1,7 +1,7 @@
 // ⏰Feature #1
 // In your project, display the current date and time using JavaScript: Tuesday 16:00
 
-function displayTimeAndDate(date) {
+function displayTimeAndDay(date) {
   let days = [
     "Sunday",
     "Monday",
@@ -28,7 +28,7 @@ function displayTimeAndDate(date) {
 
 let dateElement = document.querySelector("#day-plus-time");
 let currentTime = new Date();
-displayTimeAndDate(currentTime);
+displayTimeAndDay(currentTime);
 
 // 🕵️‍♀️Feature #2
 // Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
