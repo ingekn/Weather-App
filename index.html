@@ -43,17 +43,15 @@
             />
             <input type="submit" value="Search" class="btn btn-warning" />
             <button type="button" id="current-button" class="btn btn-info">
-              Current location
+              My location
             </button>
           </form>
-          <hr />
         </div>
-        <!-- two columns with city and info and weather  -->
-
+        <hr />
+        <!-- three columns with city and info and weather  -->
+        <h2 class="city"></h2>
         <div class="row">
-          <div class="col-6">
-            <h2 class="city"></h2>
-
+          <div class="col-4">
             <div class="other-info">
               <ul>
                 <li class="day-plus-time" id="day-plus-time">Monday, 22:45</li>
@@ -64,11 +62,13 @@
             </div>
           </div>
 
-          <div class="col-6">
+          <div class="col-4">
             <div class="weather-image">
               <img src="images/sunny.png" alt="sunny" width="88px" />
             </div>
+          </div>
 
+          <div class="col-4">
             <div class="temp"></div>
             <span class="degree-change">
               <a href="#" id="celsius">°C</a>
@@ -82,7 +82,7 @@
           </div>
         </div>
         <!-- weather forecast columns -->
-        <div class="days">
+        <div class="forecast">
           <div class="row">
             <div class="col-2">
               <div class="monday">
@@ -134,6 +134,7 @@
             </div>
           </div>
         </div>
+
         <!-- pssss -->
       </div>
     </div>

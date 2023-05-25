@@ -7,6 +7,12 @@ h1 {
   padding-bottom: 80px;
   color: #ffc107;
 }
+hr {
+  height: 1px;
+  background-color: #f1cf66;
+  border: none;
+  width: 565px;
+}
 ul {
   list-style: none;
   padding-left: 10px;
@@ -16,13 +22,14 @@ ul {
   border-radius: 10px;
   margin: 20px auto;
   border-radius: 10px;
-  padding-left: 20px;
+  padding: 20px;
   padding-top: 20px;
-  width: 720px;
-  height: 376px;
+  /* width: 720px;
+  height: 376px; */
   max-width: 650px;
 }
 .upper-part {
+  padding: 8px;
   margin: 10px 20px;
 }
 .search-bar {
@@ -53,67 +60,52 @@ ul {
 .city {
   font-size: 38px;
   margin-top: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 21px;
   margin-left: 30px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .day-plus-time {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 15px;
   font-style: italic;
   font-weight: 500;
 }
 .other-info {
-  font-size: 13px;
-  padding-bottom: 30px;
+  font-size: 14px;
   font-weight: 400;
   padding-left: 20px;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
 }
-
 .weather-image {
   position: relative;
-  left: -70px;
-  margin-top: 15px;
-  margin-bottom: 35px;
+  left: 30px;
 }
-.temp,
-.weather-condition {
-  font-size: 25px;
-  position: relative;
-  left: -60px;
+.temp {
+  font-size: 38px;
+
   font-weight: 600;
 }
-.weather-condition {
-  position: relative;
-  top: -20px;
-  margin-top: 0px;
-  padding: 0;
-  text-transform: capitalize;
-}
 .degree-change {
-  font-size: 15px;
+  font-size: 18px;
   position: relative;
-  top: -40px;
-  left: -25px;
+  top: -60px;
+  left: 40px;
   font-weight: 500;
 }
-.days {
-  padding: 0;
-  margin-left: 0;
-}
-.monday,
-.tuesday,
-.wednesday,
-.thursday,
-.friday {
-  font-size: 14px;
+.weather-condition {
+  font-size: 25px;
+  font-weight: 500;
   position: relative;
-  left: -30px;
-  padding: 20px 0;
-  font-weight: 400;
-  text-align: center;
+  left: -55px;
+  text-transform: capitalize;
+}
+.forecast {
+  padding-left: 40px;
+  margin: 10px;
+}
+.forecast,
+.days {
 }
