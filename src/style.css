@@ -17,16 +17,17 @@ ul {
   list-style: none;
   padding-left: 10px;
 }
+.weather-app-wrapper {
+  max-width: 650px;
+  margin: 0px auto;
+}
 .weather-app {
   border: 2px solid #ffc107;
   border-radius: 10px;
-  margin: 20px auto;
   border-radius: 10px;
   padding: 20px;
-  padding-top: 20px;
   /* width: 720px;
   height: 376px; */
-  max-width: 650px;
 }
 .upper-part {
   padding: 8px;
@@ -110,6 +111,7 @@ ul {
 .days {
 }
 .closing-line {
+  margin-top: 10px;
   position: relative;
   right: -40px;
   font-style: italic;
