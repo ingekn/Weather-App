@@ -109,3 +109,10 @@ ul {
 .forecast,
 .days {
 }
+.closing-line {
+  position: relative;
+  right: -40px;
+  font-style: italic;
+  color: gray;
+  font-size: 12px;
+}
