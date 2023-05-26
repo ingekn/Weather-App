@@ -118,3 +118,10 @@ ul {
   color: gray;
   font-size: 12px;
 }
+.degree-change .active {
+  color: black;
+  cursor: default;
+}
+.degree-change .active:hover {
+  text-decoration: none;
+}

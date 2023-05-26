@@ -39,6 +39,7 @@ function updateWeather(response) {
   newTemperature = Math.round(response.data.main.temp);
   let oldTemperature = document.querySelector(".temp");
   oldTemperature.innerHTML = `${newTemperature}`;
+  celsiusTemperature = response.data.main.temp;
   // -> short code is
   // document.querySelector(".temp").innerHTML = Math.round(response.data.main.temp)
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -72,24 +73,28 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-// 🙀Bonus Feature
-// Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
+// Display temperature in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
 
 function convertFahrenheit(event) {
   event.preventDefault;
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  let temperatureElement = document.querySelector(".temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  // remove the active class from the celcius temp and add active to fahrenheit
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
 function convertCelcius(event) {
   event.preventDefault;
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+  let temperatureElement = document.querySelector(".temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  // add the active class to the celcius temp and remove active from fahrenheit
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
-let temperatureElement = document.querySelector(".temp");
+let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertFahrenheit);
