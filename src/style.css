@@ -59,15 +59,15 @@ ul {
   left: 15px;
 }
 .city {
-  font-size: 38px;
-  margin-top: 10px;
-  margin-bottom: 21px;
+  font-size: 35px;
+  margin-top: 12px;
   margin-left: 30px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .day-plus-time {
+  margin-top: 8px;
   font-size: 18px;
   margin-bottom: 15px;
   font-style: italic;
@@ -80,13 +80,13 @@ ul {
   font-style: italic;
   font-weight: 400;
 }
-.weather-image {
+.weather-image img {
   position: relative;
   left: 30px;
 }
 .temp {
-  font-size: 42px;
-
+  margin-top: 18px;
+  font-size: 40px;
   font-weight: 600;
 }
 .degree-change {
@@ -97,8 +97,8 @@ ul {
   font-weight: 500;
 }
 .weather-condition {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 26px;
+  font-weight: 600;
   position: relative;
   left: -55px;
   text-transform: capitalize;
