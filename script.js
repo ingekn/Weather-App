@@ -34,7 +34,7 @@ displayTimeAndDay(currentTime);
 // Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 
 function updateWeather(response) {
-  console.log(response);
+  console.log(response.data.weather[0].icon);
   document.querySelector(".city").innerHTML = response.data.name;
   newTemperature = Math.round(response.data.main.temp);
   let oldTemperature = document.querySelector(".temp");
@@ -47,6 +47,13 @@ function updateWeather(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
+  let icon = response.data.weather[0].icon;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
