@@ -104,13 +104,6 @@ celsiusLink.addEventListener("click", convertCelcius);
 
 // get location
 
-// function showTemperature(response) {
-//   console.log(response);
-//   let newTemperature = Math.round(response.data.main.temp);
-//   let oldTemperature = document.querySelector(".temp");
-//   oldTemperature.innerHTML = `${newTemperature}C`;
-// }
-
 function getLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
