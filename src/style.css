@@ -103,13 +103,7 @@ ul {
   left: -55px;
   text-transform: capitalize;
 }
-.forecast {
-  padding-left: 40px;
-  margin: 10px;
-}
-.forecast,
-.days {
-}
+
 .closing-line {
   margin-top: 10px;
   position: relative;
@@ -124,4 +118,27 @@ ul {
 }
 .degree-change .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  margin-top: 10px;
+  text-align: center;
+  color: #000;
+}
+.weather-forecast-day {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temp {
+  font-size: 14px;
+}
+.weather-forecast-temp-min {
+  opacity: 0.5;
+}
+.icon {
+  display: block;
+  margin: 0 auto;
+  width: 36px;
+  height: 32px;
 }
