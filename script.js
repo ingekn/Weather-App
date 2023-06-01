@@ -124,3 +124,31 @@ let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", searchUserLocation);
 
 search("New York");
+
+// display forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+            <div class="weather-forecast-day">${day}</div>
+              <div class="icon">
+                  <i class="fa-solid fa-cloud-sun"></i>
+              </div>
+                <div class="weather-forecast-temp">
+                  <span class="weather-forecast-temp-max">22° </span>
+                  <span class="weather-forecast-temp-min">20° </span>
+                </div>
+        </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
