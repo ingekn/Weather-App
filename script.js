@@ -34,7 +34,6 @@ displayTimeAndDay(currentTime);
 // Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 
 function updateWeather(response) {
-  console.log(response.data.weather[0].icon);
   document.querySelector(".city").innerHTML = response.data.name;
   newTemperature = Math.round(response.data.main.temp);
   let oldTemperature = document.querySelector(".temp");
@@ -55,6 +54,9 @@ function updateWeather(response) {
     `https://openweathermap.org/img/wn/${icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  // forecast
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -127,7 +129,8 @@ search("New York");
 
 // display forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -151,4 +154,8 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-displayForecast();
+function getForecast(coordinates) {
+  let apiKey = "1386aafaa966aa68e4520o87btc31531";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
