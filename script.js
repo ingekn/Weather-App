@@ -129,26 +129,48 @@ search("New York");
 
 // display forecast
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thuy", "Fri", "Sat", "Sun"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+  console.log(forecast);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col-2">
-            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-day">${formatForecastDay(
+              forecastDay.time
+            )}</div>
               <div class="icon">
-                  <i class="fa-solid fa-cloud-sun"></i>
+              <img 
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  forecastDay.condition.icon
+                }.png" 
+                alt="${forecastDay.condition.icon}" 
+                width=42 
+              />
+              
               </div>
                 <div class="weather-forecast-temp">
-                  <span class="weather-forecast-temp-max">22° </span>
-                  <span class="weather-forecast-temp-min">20° </span>
+                  <span class="weather-forecast-temp-max">${Math.round(
+                    forecastDay.temperature.maximum
+                  )}°</span>  
+                  <span class="weather-forecast-temp-min">${Math.round(
+                    forecastDay.temperature.minimum
+                  )}° </span>
                 </div>
         </div>
     `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
