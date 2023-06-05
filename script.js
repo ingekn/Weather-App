@@ -207,4 +207,4 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-search("Tokyo");
+search("San Francisco");
