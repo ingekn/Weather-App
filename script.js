@@ -47,15 +47,45 @@ function updateWeather(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
-  let icon = response.data.condition.icon;
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
-  );
-  iconElement.setAttribute("alt", response.data.condition.icon);
+  updateIcon(response.data.condition.icon);
+  // let icon = response.data.condition.icon;
+  // let iconElement = document.querySelector("#icon");
+  // iconElement.setAttribute(
+  //   "src",
+  //   `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
+  // );
+  // iconElement.setAttribute("alt", response.data.condition.icon);
   // run forecast
   getForecast(response.data.coordinates);
+}
+
+// update weather icon for clear sky day and night due to strange pixels in image of API icons
+function updateIcon(icon) {
+  console.log(icon);
+  let iconElement = document.querySelector("#icon");
+
+  if (icon === "clear-sky-day") {
+    iconElement.setAttribute("src", "images/sunny.png");
+    iconElement.setAttribute("alt", "Clear-sky-day");
+    iconElement.setAttribute("alt", "Clear-sky-day");
+    iconElement.style.width = "110px";
+    iconElement.style.height = "110px";
+    iconElement.style.marginTop = "15px";
+  } else if (icon === "clear-sky-night") {
+    iconElement.setAttribute("src", "images/clear-sky-night-2.png");
+    iconElement.setAttribute("alt", "Clear-sky-night");
+    iconElement.style.width = "110px";
+    iconElement.style.height = "110px";
+    iconElement.style.marginTop = "15px";
+  } else {
+    iconElement.setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
+    );
+    iconElement.setAttribute("alt", icon);
+    iconElement.style.width = "130px";
+    iconElement.style.height = "130px";
+  }
 }
 
 // Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
@@ -123,8 +153,6 @@ function searchUserLocation(event) {
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", searchUserLocation);
 
-search("Tokyo");
-
 // display forecast
 
 function formatForecastDay(timestamp) {
@@ -178,3 +206,5 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
+
+search("Tokyo");
