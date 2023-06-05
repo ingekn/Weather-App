@@ -1,5 +1,5 @@
 // ⏰Feature #1
-// In your project, display the current date and time using JavaScript: Tuesday 16:00
+// In your project, display the current date and time using JavaScript
 
 function displayTimeAndDay(date) {
   let days = [
@@ -30,39 +30,38 @@ let dateElement = document.querySelector("#day-plus-time");
 let currentTime = new Date();
 displayTimeAndDay(currentTime);
 
-// 🕵️‍♀️Feature #2
-// Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
+// Funtion that handles the city update,  weather update, tamp / windetc
 
 function updateWeather(response) {
-  document.querySelector(".city").innerHTML = response.data.name;
-  newTemperature = Math.round(response.data.main.temp);
+  document.querySelector(".city").innerHTML = response.data.city;
+  newTemperature = Math.round(response.data.temperature.current);
   let oldTemperature = document.querySelector(".temp");
   oldTemperature.innerHTML = `${newTemperature}`;
-  celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.temperature.current;
   // -> short code is
   // document.querySelector(".temp").innerHTML = Math.round(response.data.main.temp)
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#humidity").innerHTML =
+    response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].main;
-  let icon = response.data.weather[0].icon;
+    response.data.condition.description;
+  let icon = response.data.condition.icon;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  // forecast
-  getForecast(response.data.coord);
+  iconElement.setAttribute("alt", response.data.condition.icon);
+  // run forecast
+  getForecast(response.data.coordinates);
 }
 
+// Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 function search(city) {
-  const apiKey = "f81614abe2395d5dfecd45b9298041de";
-  const ownApiKey = "33d1903aae9a8dd9cb119a9d70a09d9d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ownApiKey}&units=metric`;
+  const apiKey = "1386aafaa966aa68e4520o87btc31531";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeather);
 }
 
@@ -109,10 +108,9 @@ celsiusLink.addEventListener("click", convertCelcius);
 function getLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  const apiKey = "f81614abe2395d5dfecd45b9298041de";
-  const ownApiKey = "33d1903aae9a8dd9cb119a9d70a09d9d";
+  const apiKey = "1386aafaa966aa68e4520o87btc31531";
 
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(updateWeather);
 }
@@ -138,7 +136,6 @@ function formatForecastDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
@@ -178,6 +175,6 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "1386aafaa966aa68e4520o87btc31531";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
