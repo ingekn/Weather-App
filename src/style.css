@@ -32,9 +32,10 @@ ul {
 .upper-part {
   padding: 8px;
   margin: 10px 20px;
+  padding-bottom: 15px;
 }
 .search-bar {
-  font-size: 16px;
+  font-size: 18px;
   width: 330px;
   height: 40px;
   border-radius: 17px;
@@ -60,7 +61,7 @@ ul {
 }
 .city {
   font-size: 35px;
-  margin-top: 12px;
+  margin-top: 30px;
   margin-left: 30px;
   white-space: nowrap;
   overflow: hidden;
@@ -126,6 +127,7 @@ ul {
 .weather-forecast-day {
   font-size: 16px;
   opacity: 0.5;
+  padding: 15px;
 }
 
 .weather-forecast-temp {
