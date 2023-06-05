@@ -123,7 +123,7 @@ function searchUserLocation(event) {
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", searchUserLocation);
 
-search("New York");
+search("Tokyo");
 
 // display forecast
 
