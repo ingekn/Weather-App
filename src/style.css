@@ -1,5 +1,16 @@
 * {
   font-family: "Poppins", sans-serif;
+  color: white;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/672/original/pexels-photomix-company-96622.jpg?1686065668");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 h1 {
   text-align: center;
@@ -17,6 +28,11 @@ ul {
   list-style: none;
   padding-left: 10px;
 }
+img {
+  padding: 5px;
+  width: ;
+  height: ;
+}
 .weather-app-wrapper {
   max-width: 650px;
   margin: 0px auto;
@@ -26,8 +42,7 @@ ul {
   border-radius: 10px;
   border-radius: 10px;
   padding: 20px;
-  /* width: 720px;
-  height: 376px; */
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .upper-part {
   padding: 8px;
@@ -108,11 +123,11 @@ ul {
   position: relative;
   right: -40px;
   font-style: italic;
-  color: gray;
+  color: white;
   font-size: 12px;
 }
 .degree-change .active {
-  color: black;
+  color: white;
   cursor: default;
 }
 .degree-change .active:hover {
@@ -126,8 +141,9 @@ ul {
 }
 .weather-forecast-day {
   font-size: 16px;
-  opacity: 0.5;
+  opacity: 0.8;
   padding: 15px;
+  padding-bottom: 5px;
 }
 
 .weather-forecast-temp {
@@ -136,7 +152,7 @@ ul {
 .weather-forecast-temp-min {
   opacity: 0.5;
 }
-.icon {
+#icon {
   margin-top: 15px;
   display: block;
   margin: 0 auto;
