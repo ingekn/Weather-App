@@ -41,7 +41,7 @@
                 class="search-bar"
                 type="search"
                 id="city-input"
-                placeholder="Look for another city..."
+                placeholder="Search for another city..."
                 autocomplete="off"
               />
               <input type="submit" value="Search" class="btn btn-warning" />
@@ -49,18 +49,14 @@
             </form>
           </div>
           <hr />
-          <!-- three columns with city and info and weather  -->
+          <!-- three columns with city and icon and temp  -->
           <h2 class="city"></h2>
           <div class="row">
             <div class="col-4">
               <div class="d-flex other-info">
                 <ul>
-                  <li class="day-plus-time" id="day-plus-time">
-                    Monday 22:45,
-                  </li>
-                  <li class="weather-condition" id="weather-description">
-                    Sunny
-                  </li>
+                  <li class="day-plus-time" id="day-plus-time"></li>
+                  <li class="weather-condition" id="weather-description"></li>
                   <li>Humidity: <span id="humidity"></span>%</li>
                   <li>Wind: <span id="wind"></span> km/h</li>
                 </ul>
@@ -69,10 +65,9 @@
 
             <div class="col-4">
               <div class="d-flex weather-image">
-                <img src="" alt="sunny" width="140px" id="icon" />
+                <img src="" alt="sunny" id="icon" />
               </div>
             </div>
-
             <div class="col-4">
               <div class="d-flex temp"></div>
               <span class="degree-change">
@@ -84,14 +79,12 @@
           </div>
           <!-- weather forecast columns -->
           <hr />
-
           <div class="weather-forecast" id="forecast"></div>
-
-          <!-- pssss -->
+          <!-- footer -->
         </div>
         <div class="closing-line">
           <a
-            href="https://github.com/ingekn/Weather-App-2"
+            href="https://github.com/ingekn/Weather-App"
             target="_blank"
             rel="noopener noreferrer"
             >Open-source code</a
