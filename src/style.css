@@ -102,9 +102,9 @@ a:hover {
   text-overflow: ellipsis;
 }
 .day-plus-time {
-  margin-top: 8px;
+  margin-top: 18px;
   font-size: 17px;
-  margin-bottom: 15px;
+  margin-bottom: 23px;
   font-style: italic;
   font-weight: 500;
 }
@@ -166,7 +166,7 @@ a:hover {
 }
 
 .weather-forecast-temp {
-  font-size: 15px;
+  font-size: 16px;
 }
 .weather-forecast-temp-min {
   opacity: 0.6;

@@ -72,7 +72,7 @@ function updateIcon(icon) {
     iconElement.style.height = "110px";
     iconElement.style.marginTop = "15px";
   } else if (icon === "clear-sky-night") {
-    iconElement.setAttribute("src", "images/clear-sky-night-2.png");
+    iconElement.setAttribute("src", "images/clear-sky-night.png");
     iconElement.setAttribute("alt", "Clear-sky-night");
     iconElement.style.width = "110px";
     iconElement.style.height = "110px";
