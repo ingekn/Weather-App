@@ -2,11 +2,6 @@
   font-family: "Poppins", sans-serif;
   color: white;
 }
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
 body {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/672/original/pexels-photomix-company-96622.jpg?1686065668");
   background-repeat: no-repeat;
@@ -35,8 +30,8 @@ a:hover {
 }
 
 .weather-app-wrapper {
+  margin: 0 auto;
   max-width: 650px;
-  margin: 0px auto;
 }
 .weather-app {
   border: 3px solid #ffc107;
