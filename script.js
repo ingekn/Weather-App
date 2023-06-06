@@ -83,8 +83,8 @@ function updateIcon(icon) {
       `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
     );
     iconElement.setAttribute("alt", icon);
-    iconElement.style.width = "130px";
-    iconElement.style.height = "130px";
+    iconElement.style.width = "170px";
+    iconElement.style.height = "170px";
   }
 }
 
