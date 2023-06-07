@@ -79,6 +79,7 @@ function updateIcon(response) {
 }
 
 // When searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
+// Working with 2 APIs here as SheCodes has better icons and the openweather API is not showing undefined when spelling mistakes are made or searchbutton is being clicked without input
 function search(city) {
   const ownApiKey = "33d1903aae9a8dd9cb119a9d70a09d9d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ownApiKey}&units=metric`;
