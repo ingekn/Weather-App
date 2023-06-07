@@ -33,7 +33,6 @@ displayTimeAndDay(currentTime);
 // Funtion that handles the city update,  weather update, temp / wind etc
 
 function updateWeather(response) {
-  console.log(response.data.main.temp);
   document.querySelector(".city").innerHTML = response.data.name;
   newTemperature = Math.round(response.data.main.temp);
   let oldTemperature = document.querySelector(".temp");
