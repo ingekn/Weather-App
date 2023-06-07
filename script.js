@@ -33,27 +33,26 @@ displayTimeAndDay(currentTime);
 // Funtion that handles the city update,  weather update, temp / wind etc
 
 function updateWeather(response) {
-  document.querySelector(".city").innerHTML = response.data.city;
-  newTemperature = Math.round(response.data.temperature.current);
+  console.log(response.data.main.temp);
+  document.querySelector(".city").innerHTML = response.data.name;
+  newTemperature = Math.round(response.data.main.temp);
   let oldTemperature = document.querySelector(".temp");
   oldTemperature.innerHTML = `${newTemperature}`;
-  celsiusTemperature = response.data.temperature.current;
+  celsiusTemperature = response.data.main.temp;
   // -> short code is
   // document.querySelector(".temp").innerHTML = Math.round(response.data.main.temp)
-  document.querySelector("#humidity").innerHTML =
-    response.data.temperature.humidity;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#weather-description").innerHTML =
-    response.data.condition.description;
-  updateIcon(response.data.condition.icon);
-  getForecast(response.data.coordinates);
+    response.data.weather[0].description;
+  getForecast(response.data.coord);
 }
 
 // update weather icon for clear sky day and night due to strange pixels in image of API icons
-function updateIcon(icon) {
-  console.log(icon);
+function updateIcon(response) {
+  let icon = response.data.condition.icon;
   let iconElement = document.querySelector("#icon");
 
   if (icon === "clear-sky-day") {
@@ -82,9 +81,12 @@ function updateIcon(icon) {
 
 // When searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 function search(city) {
+  const ownApiKey = "33d1903aae9a8dd9cb119a9d70a09d9d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ownApiKey}&units=metric`;
   const apiKey = "1386aafaa966aa68e4520o87btc31531";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let apiUrlSheCodes = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeather);
+  axios.get(apiUrlSheCodes).then(updateIcon);
 }
 
 function handleSubmit(event) {
@@ -130,9 +132,10 @@ celsiusLink.addEventListener("click", convertCelcius);
 function getLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  const apiKey = "1386aafaa966aa68e4520o87btc31531";
+  // const apiKey = "f81614abe2395d5dfecd45b9298041de";
+  const ownApiKey = "33d1903aae9a8dd9cb119a9d70a09d9d";
 
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${ownApiKey}&units=metric`;
 
   axios.get(apiUrl).then(updateWeather);
 }
@@ -195,7 +198,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "1386aafaa966aa68e4520o87btc31531";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
