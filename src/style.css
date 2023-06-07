@@ -6,6 +6,7 @@ body {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/672/original/pexels-photomix-company-96622.jpg?1686065668");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #388ecb;
 }
 h1 {
   text-align: center;
