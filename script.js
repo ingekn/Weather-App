@@ -1,5 +1,5 @@
 // ⏰Feature #1
-// In your project, display the current date and time using JavaScript
+// Display the current date and time using JavaScript
 
 function displayTimeAndDay(date) {
   let days = [
@@ -30,7 +30,7 @@ let dateElement = document.querySelector("#day-plus-time");
 let currentTime = new Date();
 displayTimeAndDay(currentTime);
 
-// Funtion that handles the city update,  weather update, tamp / windetc
+// Funtion that handles the city update,  weather update, temp / wind etc
 
 function updateWeather(response) {
   document.querySelector(".city").innerHTML = response.data.city;
@@ -48,14 +48,6 @@ function updateWeather(response) {
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
   updateIcon(response.data.condition.icon);
-  // let icon = response.data.condition.icon;
-  // let iconElement = document.querySelector("#icon");
-  // iconElement.setAttribute(
-  //   "src",
-  //   `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
-  // );
-  // iconElement.setAttribute("alt", response.data.condition.icon);
-  // run forecast
   getForecast(response.data.coordinates);
 }
 
@@ -88,7 +80,7 @@ function updateIcon(icon) {
   }
 }
 
-// Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
+// When searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 function search(city) {
   const apiKey = "1386aafaa966aa68e4520o87btc31531";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -104,7 +96,7 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-// Display temperature in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
+// When clicking on Celsius link, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
 
 function convertFahrenheit(event) {
   event.preventDefault;
@@ -206,5 +198,7 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
+
+// initial submit / search for city
 
 search("San Francisco");
