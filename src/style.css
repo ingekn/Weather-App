@@ -9,8 +9,6 @@ body {
   background-color: #388ecb;
 }
 h1 {
-  text-align: center;
-  padding: 60px;
   color: #ffc107;
 }
 hr {
@@ -39,6 +37,7 @@ a:hover {
   border-radius: 10px;
   padding: 20px;
   background-color: rgba(56, 143, 214, 0.5);
+  margin-top: 60px;
 }
 .upper-part {
   padding: 8px;
