@@ -1,4 +1,3 @@
-// ⏰Feature #1
 // Display the current date and time using JavaScript
 
 function displayTimeAndDay(date) {
@@ -56,7 +55,6 @@ function updateIcon(response) {
 
   if (icon === "clear-sky-day") {
     iconElement.setAttribute("src", "images/sunny.png");
-    iconElement.setAttribute("alt", "Clear-sky-day");
     iconElement.setAttribute("alt", "Clear-sky-day");
     iconElement.style.width = "110px";
     iconElement.style.height = "110px";
